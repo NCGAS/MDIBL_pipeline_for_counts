@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ! $(command -v singularity) ]; then
+	module load singularity
+fi
+
+VERSION=0.13.5
+PACKAGE=htseq
+TOOL=htseq-count
+DIRECTORY=~/Documents/MDIBL_pipeline_for_counts/software/htseq
+STORAGE=/vol_b/
+
+OPTIONS=$OPTIONS" -B $STORAGE"
+
+singularity exec $OPTIONS $DIRECTORY/singularity-$PACKAGE-$VERSION.sif $TOOL "$@"

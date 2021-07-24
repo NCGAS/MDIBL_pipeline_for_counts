@@ -12,8 +12,6 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=01:00:00
 
-module load htseq/0.9.1 
-
 stub=
 gff=../Reference/dpulex_genes.gff
 

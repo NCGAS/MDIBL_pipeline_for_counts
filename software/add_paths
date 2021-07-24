@@ -1,0 +1,1 @@
+export PATH=$PATH:`pwd`/software/htseq:`pwd`/software/samtools:`pwd`/software/hisat2:`pwd`/software/Trinity

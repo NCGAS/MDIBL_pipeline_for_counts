@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ! $(command -v singularity) ]; then
+	module load singularity
+fi
+
+VERSION=2.2.1
+PACKAGE=hisat2
+TOOL=hisat2-build
+DIRECTORY=~/Documents/MDIBL_pipeline_for_counts/software/hisat2
+STORAGE=/home/ssanders/Documents/MDIBL_pipeline_for_counts/
+
+OPTIONS=$OPTIONS" -B $STORAGE"
+
+singularity exec $OPTIONS $DIRECTORY/singularity-$PACKAGE-$VERSION.sif $TOOL "$@"

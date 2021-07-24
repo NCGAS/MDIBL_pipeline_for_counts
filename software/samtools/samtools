@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ! $(command -v singularity) ]; then
+	module load singularity
+fi
+
+VERSION=1.9
+PACKAGE=samtools
+TOOL=samtools
+DIRECTORY=~/Documents/MDIBL_pipeline_for_counts/software/samtools
+STORAGE=/vol_b/
+
+OPTIONS=$OPTIONS" -B $STORAGE"
+
+singularity exec $OPTIONS $DIRECTORY/singularity-$PACKAGE-$VERSION.sif $TOOL "$@"

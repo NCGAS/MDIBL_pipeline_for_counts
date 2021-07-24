@@ -11,24 +11,18 @@
 #SBATCH --ntasks-per-node=2
 #SBATCH --time=03:00:00
 
-module load samtools
-module load hisat2
-
-ref=../Reference/dpulex_genome
-splicesites=../Reference/splicesites.txt
+ref=../Reference/dpulex_PA42
 
 stub=
 
-reads="../Raw_Sequences/"
-left="_R1_001.fastq.gz"
-right="_R2_001.fastq.gz"
+reads="../Input_Sequences/"
+left="_1.short.fastq"
+right="_2.short.fastq"
 
 sam=../Mapping/SamFiles/$stub.sam
 summary=../Mapping/SummaryFiles/$stub.hisat2.summary
 
-hisat2 -p 2 -x $ref --known-splicesite-infile $splicesites -1 $reads$stub$left -2 $reads$stub$right -S $sam --max-intronlen 5000 --new-summary --summary-file $summary
+hisat2 -p 2 -x $ref -1 $reads$stub$left -2 $reads$stub$right -S $sam --max-intronlen 5000 --new-summary --summary-file $summary
 
 samtools sort $sam > ${sam%sam}sort.bam
 samtools index ${sam%sam}sort.bam
-#samtools view -hb $sam > ${sam%sam}bam
-#samtools sort -o ${sam%sam}sort.bam -O bam -T $stub -m 2G ${sam%sam}bam
