@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -J hisat2&
+#SBATCH -J hisat2
 #SBATCH -p general
 #SBATCH -o hisat2&_%j.txt
 #SBATCH -e hisat2&_%j.err
