@@ -13,7 +13,7 @@
 #SBATCH --time=01:00:00
 
 stub=
-gff=../Reference/PA42.3.0.1.fasta.all.gff
+gff=../Reference/dpulex_genes.gff
 
 echo $stub
 htseq-count -f bam -r pos -s no -m intersection-nonempty -t exon -i Parent ../Mapping/SamFiles/$stub.sort.bam $gff > ../Counts/$stub.counts
