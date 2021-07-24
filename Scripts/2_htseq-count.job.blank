@@ -1,7 +1,7 @@
 #!/bin/bash
 #!/bin/bash
 
-#SBATCH -J htseq&
+#SBATCH -J htseq
 #SBATCH -p general
 #SBATCH -o htseq&_%j.txt
 #SBATCH -e htseq&_%j.err
