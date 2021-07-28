@@ -8,7 +8,7 @@ VERSION=0.13.5
 PACKAGE=htseq
 TOOL=htseq-count
 DIRECTORY=~/Documents/MDIBL_pipeline_for_counts/software/htseq
-STORAGE=/vol_b/
+STORAGE=/home/
 
 OPTIONS=$OPTIONS" -B $STORAGE"
 
