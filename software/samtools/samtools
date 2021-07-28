@@ -8,7 +8,7 @@ VERSION=1.9
 PACKAGE=samtools
 TOOL=samtools
 DIRECTORY=~/Documents/MDIBL_pipeline_for_counts/software/samtools
-STORAGE=/vol_b/
+STORAGE=/home/
 
 OPTIONS=$OPTIONS" -B $STORAGE"
 
